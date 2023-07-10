@@ -100,7 +100,7 @@ network_interface_ids = [azurerm_network_interface.example-nic.id]
 /*
 admin_ssh_key {
 username = "mmossburg"
-admin_password = "testpassword"
+admin_password = "TestPassword33#"
 # public_key = file("~/.ssh/id_rsa.pub")
 }
 */
