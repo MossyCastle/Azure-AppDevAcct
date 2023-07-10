@@ -74,7 +74,7 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
 
 
 
-
+/*
 # virtual machines
 resource "azurerm_network_interface" "example-nic" {
 name = "example-nic"
@@ -105,7 +105,7 @@ admin_password = "TestPassword33#"
 # public_key = file("~/.ssh/id_rsa.pub")
 }
 */
-
+/*
 source_image_reference {
 publisher = "Canonical"
 offer = "UbuntuServer"
@@ -119,7 +119,7 @@ caching              = "ReadWrite"
 storage_account_type = "Premium_LRS" 
 }
 }
-
+*/
 
 /* # Dev
 script line 1
