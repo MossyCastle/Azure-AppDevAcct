@@ -111,7 +111,7 @@ version = "latest"
 
 os_disk {
 name = "example-osdisk"
-
+}
 
 
 
