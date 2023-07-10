@@ -1,5 +1,6 @@
 
 
+/*
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = "my-aks-cluster"
   location            = azurerm_resource_group.RGAppDev.location
@@ -27,4 +28,4 @@ resource "azurerm_kubernetes_cluster" "aks" {
 }
 
 
-
+*/

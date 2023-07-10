@@ -65,9 +65,14 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
   resource "azurerm_subnet" "EUS_Subnet3" {
     name                 = "EUS_Subnet_10_2_1_0_24"
     resource_group_name  = azurerm_resource_group.RGAppDev.name
-    virtual_network_name = azurerm_virtual_network.EUS-VNET.name
+    virtual_network_name = azurerm_virtual_network.EUS-VNET-10-2-0-0-16.name
     address_prefixes     = ["10.2.1.0/24"]
 }
+
+# peering code
+
+
+
 
 
 
