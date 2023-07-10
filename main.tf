@@ -115,7 +115,8 @@ version = "latest"
 os_disk {
 name                 = "example-osdisk"
 caching              = "ReadWrite"
-storage_account_type = "Premium_LRS" }
+storage_account_type = "Premium_LRS" 
+}
 }
 
 
