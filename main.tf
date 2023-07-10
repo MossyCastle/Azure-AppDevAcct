@@ -76,7 +76,7 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
 
 
 # virtual machines
-resource "azurerm_network_interface" "example" {
+resource "azurerm_network_interface" "example-nic" {
 name = "example-nic"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
@@ -95,7 +95,7 @@ resource_group_name = azurerm_resource_group.RGAppDev.name
 size = "Standard_B1s"
 admin_username = "mmossburg"
 admin_password = "testpassword"
-# network_interface_ids = 2
+network_interface_ids = [azurerm_network_interface.example-nic.id]
 
 /*
 admin_ssh_key {
@@ -112,9 +112,9 @@ sku = "18.04-LTS"
 version = "latest"
 }
 
-# os_disk {
-# name = "example-osdisk"
-# }
+os_disk {
+name = "example-osdisk"
+ }
 }
 
 
