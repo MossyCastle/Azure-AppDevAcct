@@ -62,7 +62,7 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
   
   # create VNET2 subnet configs
   
-  resource "azurerm_subnet" "EUS_Subnet2" {
+  resource "azurerm_subnet" "EUS_Subnet3" {
     name                 = "EUS_Subnet_10_2_1_0_24"
     resource_group_name  = azurerm_resource_group.RGAppDev.name
     virtual_network_name = azurerm_virtual_network.EUS-VNET.name
