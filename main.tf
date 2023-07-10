@@ -83,7 +83,7 @@ resource_group_name = azurerm_resource_group.RGAppDev.name
 
 ip_configuration {
 name = "example-ipconfig"
-subnet_id = azurerm_subnet.example.id
+subnet_id = azurerm_subnet.EUS_Subnet.id
 private_ip_address_allocation = "Dynamic"
 }
 }
@@ -93,14 +93,17 @@ name = "example-vm"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 size = "Standard_B1s"
-admin_username = "adminuser"
+admin_username = "mmossburg"
+admin_password = "testpassword"
 network_interface_ids = 2
 
+/*
 admin_ssh_key {
 username = "mmossburg"
 admin_password = "testpassword"
 # public_key = file("~/.ssh/id_rsa.pub")
 }
+*/
 
 source_image_reference {
 publisher = "Canonical"
@@ -112,7 +115,7 @@ version = "latest"
 os_disk {
 name = "example-osdisk"
 }
-
+}
 
 
 /* # Dev
