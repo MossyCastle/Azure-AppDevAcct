@@ -75,6 +75,44 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
 
 
 
+# virtual machines
+resource "azurerm_network_interface" "example" {
+name = "example-nic"
+location = azurerm_resource_group.RGAppDev.location
+resource_group_name = azurerm_resource_group.RGAppDev.name
+
+ip_configuration {
+name = "example-ipconfig"
+subnet_id = azurerm_subnet.example.id
+private_ip_address_allocation = "Dynamic"
+}
+}
+
+resource "azurerm_linux_virtual_machine" "example" {
+name = "example-vm"
+location = azurerm_resource_group.RGAppDev.location
+resource_group_name = azurerm_resource_group.RGAppDev.name
+size = "Standard_B1s"
+admin_username = "adminuser"
+network_interface_ids = 2
+
+admin_ssh_key {
+username = "mmossburg"
+admin_password = "testpassword"
+# public_key = file("~/.ssh/id_rsa.pub")
+}
+
+source_image_reference {
+publisher = "Canonical"
+offer = "UbuntuServer"
+sku = "18.04-LTS"
+version = "latest"
+}
+
+os_disk {
+name = "example-osdisk"
+
+
 
 
 /* # Dev
