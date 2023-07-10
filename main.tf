@@ -95,6 +95,7 @@ resource_group_name = azurerm_resource_group.RGAppDev.name
 size = "Standard_B1s"
 admin_username = "mmossburg"
 admin_password = "TestPassword33#"
+disable_password_authentication = false
 network_interface_ids = [azurerm_network_interface.example-nic.id]
 
 /*
