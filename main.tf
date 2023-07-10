@@ -113,8 +113,9 @@ version = "latest"
 }
 
 os_disk {
-name = "example-osdisk"
- }
+name                 = "example-osdisk"
+caching              = "ReadWrite"
+storage_account_type = "Premium_LRS" }
 }
 
 
