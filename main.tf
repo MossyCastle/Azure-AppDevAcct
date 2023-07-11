@@ -76,7 +76,7 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
 
 
 # virtual machines
-/*
+
 # Virtual machine 1 in Vnet 1
 resource "azurerm_network_interface" "example-nic1" {
 name = "example-nic1"
@@ -168,19 +168,7 @@ storage_account_type = "Premium_LRS"
 }
 }
 
-*/
 
 
 
-/* # Dev
-script line 1
-2
-3
-4
 
-# prod
-script line 1
-2
-3
-4
-*/
