@@ -101,11 +101,11 @@ disable_password_authentication = false
 network_interface_ids = [azurerm_network_interface.example-nic1.id]
 
 
-admin_ssh_key {
-username = "mmossburg"
-admin_password = "TestPassword33#"
+#admin_ssh_key {
+#username = "mmossburg"
+#admin_password = "TestPassword33#"
 # public_key = file("~/.ssh/id_rsa.pub")
-}
+#}
 
 
 source_image_reference {
