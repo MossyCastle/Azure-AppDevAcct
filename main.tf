@@ -124,36 +124,34 @@ storage_account_type = "Premium_LRS"
 
 
 #VM 2 in Vnet 2
-/*
-
-resource "azurerm_network_interface" "example-nic1" {
+resource "azurerm_network_interface" "example-nic2" {
 name = "example-nic1"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 
 ip_configuration {
 name = "example-ipconfig"
-subnet_id = azurerm_subnet.EUS_Subnet.id
+subnet_id = azurerm_subnet.EUS_Subnet3.id
 private_ip_address_allocation = "Dynamic"
 }
 }
 
-resource "azurerm_linux_virtual_machine" "example-VNET1-VM1" {
-name = "example-vm-VNET1-VM1"
+resource "azurerm_linux_virtual_machine" "example-VNET2-VM2" {
+name = "example-vm-VNET2-VM2"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 size = "Standard_B1s"
 admin_username = "mmossburg"
 admin_password = "TestPassword33#"
 disable_password_authentication = false
-network_interface_ids = [azurerm_network_interface.example-nic.id]
+network_interface_ids = [azurerm_network_interface.example-nic2.id]
 
 
-admin_ssh_key {
-username = "mmossburg"
-admin_password = "TestPassword33#"
+# admin_ssh_key {
+# username = "mmossburg"
+# admin_password = "TestPassword33#"
 # public_key = file("~/.ssh/id_rsa.pub")
-}
+# }
 
 
 source_image_reference {
@@ -171,7 +169,7 @@ storage_account_type = "Premium_LRS"
 }
 
 
-*/
+
 
 
 /* # Dev
