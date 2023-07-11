@@ -76,7 +76,7 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
 
 
 # virtual machines
-/*
+
 # Virtual machine 1 in Vnet 1
 resource "azurerm_network_interface" "example-nic1" {
 name = "example-nic1"
@@ -84,7 +84,7 @@ location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 
 ip_configuration {
-name = "example-ipconfig"
+name = "example-ipconfig1"
 subnet_id = azurerm_subnet.EUS_Subnet1.id
 private_ip_address_allocation = "Dynamic"
 }
@@ -130,7 +130,7 @@ location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 
 ip_configuration {
-name = "example-ipconfig"
+name = "example-ipconfig2"
 subnet_id = azurerm_subnet.EUS_Subnet3.id
 private_ip_address_allocation = "Dynamic"
 }
@@ -168,7 +168,7 @@ storage_account_type = "Premium_LRS"
 }
 }
 
-*/
+
 
 
 
