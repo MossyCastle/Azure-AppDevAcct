@@ -36,7 +36,7 @@ resource "azurerm_virtual_network" "EUS-VNET" {  #_10_1_0_0_16
   
   # create subnet configs
   
-  resource "azurerm_subnet" "EUS_Subnet" {
+  resource "azurerm_subnet" "EUS_Subnet1" {
     name                 = "EUS_Subnet_10_1_1_0_24"
     resource_group_name  = azurerm_resource_group.RGAppDev.name
     virtual_network_name = azurerm_virtual_network.EUS-VNET.name
@@ -74,10 +74,12 @@ resource "azurerm_virtual_network" "EUS-VNET-10-2-0-0-16" {  #_10_2_0_0_16
 
 
 
-/*
+
 # virtual machines
-resource "azurerm_network_interface" "example-nic" {
-name = "example-nic"
+
+# Virtual machine 1 in Vnet 1
+resource "azurerm_network_interface" "example-nic1" {
+name = "example-nic1"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 
@@ -88,8 +90,8 @@ private_ip_address_allocation = "Dynamic"
 }
 }
 
-resource "azurerm_linux_virtual_machine" "example" {
-name = "example-vm"
+resource "azurerm_linux_virtual_machine" "example-VNET1-VM1" {
+name = "example-vm-VNET1-VM1"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 size = "Standard_B1s"
@@ -98,14 +100,14 @@ admin_password = "TestPassword33#"
 disable_password_authentication = false
 network_interface_ids = [azurerm_network_interface.example-nic.id]
 
-/*
+
 admin_ssh_key {
 username = "mmossburg"
 admin_password = "TestPassword33#"
 # public_key = file("~/.ssh/id_rsa.pub")
 }
-*/
-/*
+
+
 source_image_reference {
 publisher = "Canonical"
 offer = "UbuntuServer"
@@ -119,7 +121,58 @@ caching              = "ReadWrite"
 storage_account_type = "Premium_LRS" 
 }
 }
+
+
+#VM 2 in Vnet 2
+/*
+
+resource "azurerm_network_interface" "example-nic1" {
+name = "example-nic1"
+location = azurerm_resource_group.RGAppDev.location
+resource_group_name = azurerm_resource_group.RGAppDev.name
+
+ip_configuration {
+name = "example-ipconfig"
+subnet_id = azurerm_subnet.EUS_Subnet.id
+private_ip_address_allocation = "Dynamic"
+}
+}
+
+resource "azurerm_linux_virtual_machine" "example-VNET1-VM1" {
+name = "example-vm-VNET1-VM1"
+location = azurerm_resource_group.RGAppDev.location
+resource_group_name = azurerm_resource_group.RGAppDev.name
+size = "Standard_B1s"
+admin_username = "mmossburg"
+admin_password = "TestPassword33#"
+disable_password_authentication = false
+network_interface_ids = [azurerm_network_interface.example-nic.id]
+
+
+admin_ssh_key {
+username = "mmossburg"
+admin_password = "TestPassword33#"
+# public_key = file("~/.ssh/id_rsa.pub")
+}
+
+
+source_image_reference {
+publisher = "Canonical"
+offer = "UbuntuServer"
+sku = "18.04-LTS"
+version = "latest"
+}
+
+os_disk {
+name                 = "example-osdisk"
+caching              = "ReadWrite"
+storage_account_type = "Premium_LRS" 
+}
+}
+
+
 */
+
 
 /* # Dev
 script line 1
