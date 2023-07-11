@@ -125,7 +125,7 @@ storage_account_type = "Premium_LRS"
 
 #VM 2 in Vnet 2
 resource "azurerm_network_interface" "example-nic2" {
-name = "example-nic1"
+name = "example-nic2"
 location = azurerm_resource_group.RGAppDev.location
 resource_group_name = azurerm_resource_group.RGAppDev.name
 
